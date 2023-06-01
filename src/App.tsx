@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      Cleaned project
+      <h1>Cleaned project</h1>
     </>
   )
 }
