@@ -17,7 +17,7 @@ const Nav: React.FC = () => {
   ];
 
   return (
-    <nav>
+    <nav data-testid="nav">
       <h1>Nav example</h1>
       <ul>
         {items.map((item) => (
