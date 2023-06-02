@@ -6,6 +6,7 @@ export const Container = styled.nav`
   background-color: #162056;
   color: #ffffff;
   width: 16rem;
+  border-top-right-radius: 20px 20px;
 
   h1 {
     padding: 1rem;

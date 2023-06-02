@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import LayoutLogged from './layouts/LayoutLogged';
-import Contracts from './pages/Contracts';
-import PageNotFound from './layouts/PageNotFound';
+
+import LayoutLogged from './view/layouts/LayoutLogged';
+import PageNotFound from './view/layouts/PageNotFound';
+
+import Home from './view/pages/home';
+import Contracts from './view/pages/contracts';
 
 function App() {
   return (
