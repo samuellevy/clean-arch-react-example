@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import LayoutLogged from './layouts/LayoutLogged';
 import Contracts from './pages/Contracts';
-import PageNotFound from './layouts/LayoutLogged/PageNotFound';
+import PageNotFound from './layouts/PageNotFound';
 
 function App() {
   return (

@@ -1,12 +1,12 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Container, NavList } from './styles';
 
 const Nav: React.FC = () => {
   const items = [
     {
       id: 0,
-      page: '/Home',
+      page: '/',
       name: 'Home',
     },
     {
@@ -17,16 +17,16 @@ const Nav: React.FC = () => {
   ];
 
   return (
-    <nav data-testid="nav">
+    <Container data-testid="nav">
       <h1>Nav example</h1>
-      <ul>
+      <NavList>
         {items.map((item) => (
           <li key={item.id}>
             <a href={item.page}>{item.name}</a>
           </li>
         ))}
-      </ul>
-    </nav>
+      </NavList>
+    </Container>
   );
 };
 

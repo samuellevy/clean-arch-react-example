@@ -2,14 +2,16 @@ import React from 'react';
 import Nav from '../../components/Nav';
 import { Outlet } from 'react-router-dom';
 
-// import { Container } from './styles';
+import { Container, ContentWrapper } from './styles';
 
 const LayoutLogged: React.FC = () => {
   return (
-    <>
+    <Container>
       <Nav />
-      <Outlet />
-    </>
+      <ContentWrapper>
+        <Outlet />
+      </ContentWrapper>
+    </Container>
   );
 };
 
