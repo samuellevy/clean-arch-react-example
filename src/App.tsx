@@ -1,22 +1,18 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import LayoutLogged from './layouts/LayoutLogged';
-import PageNotFound from './layouts/PageNotFound';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, defaultTheme } from './styles';
 
-import Home from './pages/home';
-import Contracts from './pages/contracts';
+import Routes from './presentation/routes';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LayoutLogged />}>
-          <Route index element={<Home />} />
-          <Route path="/contracts" element={<Contracts />} />
-        </Route>
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
