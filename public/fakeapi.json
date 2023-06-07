@@ -4,5 +4,11 @@
     "name": "Contract 1",
     "description": "Contract 1 description",
     "value": 1000
+  },
+  {
+    "id": 2,
+    "name": "Contract 2",
+    "description": "Contract 2 description",
+    "value": 2000
   }
 ]

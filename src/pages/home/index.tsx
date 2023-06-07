@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@delaunay-ui/react';
+import { Logo, Button } from '@delaunay-ui/react';
 
 const Home: React.FC = () => {
   return (
@@ -8,6 +8,7 @@ const Home: React.FC = () => {
       <p>possible home to refund app</p>
 
       <Button>Click me</Button>
+      <Logo logo="ticket" />
     </div>
   );
 };

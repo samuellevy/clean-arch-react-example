@@ -3,6 +3,8 @@ import React from 'react';
 import { Container } from './styles';
 import { Contract } from '~/domain/entity/Contract';
 
+import { Table } from '@delaunay-ui/react';
+
 type ContractListProps = {
   contracts: Contract[];
 };
@@ -12,7 +14,7 @@ const ContractList: React.FC<ContractListProps> = ({ contracts }) => {
     <Container>
       <h1>Contract List</h1>
 
-      <table>
+      <Table maxWidth="700">
         <thead>
           <tr>
             <th>Contract Name</th>
@@ -29,7 +31,7 @@ const ContractList: React.FC<ContractListProps> = ({ contracts }) => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </Container>
   );
 };

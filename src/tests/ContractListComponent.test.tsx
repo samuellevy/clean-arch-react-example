@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import ContractList from '../components/ContractList';
 import { Contract } from '~/domain/entity/Contract';
 
-describe('<App />', () => {
+describe('<ContractList />', () => {
   const contracts: Contract[] = [
     {
       id: 1,

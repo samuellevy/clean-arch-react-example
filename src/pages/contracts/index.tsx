@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import ContractList from '../../../components/ContractList';
+import ContractList from '../../components/ContractList';
 import { Container, CardContainer, Card } from './styles';
 import { Button } from '@delaunay-ui/react';
 import { Contract } from '~/domain/entity/Contract';
