@@ -1,6 +1,10 @@
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import * as S from './styles';
+import { SignInUseCase } from '~/@core/application/auth/SignInUseCase';
+import AuthGatewayHttp from '~/@core/infra/gateways/AuthGatewayHttp';
+import AxiosAdapter from '~/@core/infra/http/AxiosAdapter';
+import { useLocalStorage } from '~/presentation/hooks';
 
 interface IValues {
   email: string;
@@ -8,8 +12,24 @@ interface IValues {
 }
 
 const Login = () => {
+  const axios = new AxiosAdapter();
+  const apiBaseUrl = 'http://localhost:3000';
+  const authGateway = new AuthGatewayHttp(axios, apiBaseUrl);
+
+  const { setValue } = useLocalStorage('auth', {});
+
   const handleSubmit = (values: IValues) => {
-    console.log(values.email);
+    const signInUseCase = new SignInUseCase(authGateway, values);
+    signInUseCase
+      .execute()
+      .then(async (response) => {
+        const { data }: any = { ...response };
+        setValue(JSON.stringify({ ...data }));
+        window.location.reload();
+      })
+      .catch(() => {
+        alert('Usuário ou senha inválidos!');
+      });
   };
 
   const validationSchema = yup.object().shape({

@@ -21,7 +21,7 @@ export const privateRoutes: IRoute[] = [
 export const publicRoutes: IRoute[] = [
   {
     component: Login,
-    path: '/login',
+    path: '/',
     title: 'Login',
   },
 ];

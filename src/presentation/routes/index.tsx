@@ -3,9 +3,10 @@ import { Suspense } from 'react';
 // import { useApp } from '../context';
 import { privateRoutes, publicRoutes } from './routes';
 import { MapAllowedRoutes } from './mapAllowedRoutes';
+import { useAuth } from '../context/auth';
 
 function Routes() {
-  // const { isUserAuthenticated } = useApp();
+  const { isUserAuthenticated } = useAuth();
 
   return (
     <Suspense
@@ -22,7 +23,9 @@ function Routes() {
         </div>
       }
     >
-      <MapAllowedRoutes routes={[...privateRoutes, ...publicRoutes]} />
+      <MapAllowedRoutes
+        routes={isUserAuthenticated ? privateRoutes : publicRoutes}
+      />
     </Suspense>
   );
 }
